@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 
 require("./config/mongoose.config");
-// require("./routes/file.routes")(app);
+require("./routes/restaurant.routes")(app);
 // require("./routes/pictureInfo.routes")(app);
 // require("./routes/user.routes")(app);
 // require('dotenv').config();

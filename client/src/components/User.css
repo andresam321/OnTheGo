@@ -1,0 +1,12 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    border: 1px solid red
+}
+.display-flex3 {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 100px;
+    /* height: 100px; */
+}

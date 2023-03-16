@@ -32,7 +32,7 @@ const Restaurant = new mongoose.Schema({
     },
     menuItem00:{
         type:String,
-        ingredients:[{}]
+        ingredients:[""]
     },
     menuItem01:{
         type:String,
