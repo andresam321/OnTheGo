@@ -12,13 +12,14 @@ const createRestaurantForm = async (req,res) =>{
     }
  }
  
- const createForm = (req,res) =>{
-   restaurant.create(req.body)
-   .then((create)=>{res.status(201).json(create)})
-   .catch((err)=>{console.log(err)
-   res.status(400).json()
-    })
- }
+ const createForm = (req,res)=>{
+  // const verifyJwt= jwt.verify(req.cookies.usertoken,process.env.SECRET_KEY,{complete:true})  
+  restaurant.create(req.body)
+  .then((create)=>{res.status(201).json(create)})
+  .catch((err)=>{console.log( err)
+  res.status(400).json(err)
+})
+}
 
  const getAllRestaurants = (req,res) =>{
   restaurant.find({})
@@ -26,6 +27,13 @@ const createRestaurantForm = async (req,res) =>{
   .catch((err)=>{console.log("err",err)
   res.status(400).json({message:"Something is wrong"})
   })
+ }
+ const restaurantById = (req,res) => {
+  restaurant.findById({_id:req.params.id})
+  .then((find)=>{res.json(find)})
+  .catch((err)=>{console.log("error couldnt get the restaurant by id")
+  res.status(400).json({err})
+})
  }
 
  const getAll = async (req,res) =>{
@@ -44,5 +52,6 @@ const createRestaurantForm = async (req,res) =>{
    createRestaurantForm,
    createForm,
    getAllRestaurants,
-   getAll
+   getAll,
+   restaurantById
  }

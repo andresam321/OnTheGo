@@ -10,3 +10,17 @@
     margin-left: 100px;
     /* height: 100px; */
 }
+.restaurantBox {
+    background-color: lightblue;
+    height: 200px;
+    width: 400px;
+    
+}
+.display-block{
+    display: inline-block;
+    margin:20px;
+}
+.toTheLEft{
+    text-align: start;
+    margin-left: 120px;
+}

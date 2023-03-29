@@ -34,6 +34,10 @@ const Restaurant = new mongoose.Schema({
         type:String,
         ingredients:[""]
     },
+    nameOfRestaurant:{
+        type:String,
+        required:[true,"Name Required"]
+    },
     menuItem01:{
         type:String,
         ingredients:[{}]
