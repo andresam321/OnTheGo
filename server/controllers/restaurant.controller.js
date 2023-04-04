@@ -21,6 +21,15 @@ const createRestaurantForm = async (req,res) =>{
 })
 }
 
+const getMenuFromRestaurant = (req,res) =>{
+  restaurant.findById({_id:req.params.id})
+  .populate("menuItems", "menuItems ingredients")
+  .then((menuItems)=>{res.json(menuItems)})
+  .catch((err)=>{console.log(err,"error in getting menu")
+  res.status(400).json({message:"error"})
+})
+}
+
  const getAllRestaurants = (req,res) =>{
   restaurant.find({})
   .then((allRestaurants)=>{res.json(allRestaurants)})
@@ -50,8 +59,9 @@ const createRestaurantForm = async (req,res) =>{
 
  module.exports = {
    createRestaurantForm,
+   getMenuFromRestaurant,
    createForm,
    getAllRestaurants,
    getAll,
-   restaurantById
+   restaurantById,
  }

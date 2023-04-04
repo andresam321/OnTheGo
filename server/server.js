@@ -14,7 +14,7 @@ app.use(cookieParser());
 
 require("./config/mongoose.config");
 require("./routes/restaurant.routes")(app);
-// require("./routes/pictureInfo.routes")(app);
+require("./routes/menuItems.routes")(app);
 // require("./routes/user.routes")(app);
 // require('dotenv').config();
 
