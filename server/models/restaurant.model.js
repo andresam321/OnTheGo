@@ -34,6 +34,9 @@ const Restaurant = new mongoose.Schema({
         type:String,
         required:[true,"Name Required"]
     },
+    boxArt:{
+        type:String
+    },
     menuItems:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:"menuItems"

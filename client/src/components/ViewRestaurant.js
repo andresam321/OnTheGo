@@ -1,5 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import axios from "axios"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./User.css"
+import pic from "../images/chicken-quesadilla.jpeg"
 import { useNavigate, useParams } from 'react-router-dom'
 
 
@@ -22,7 +25,7 @@ const ViewRestaurant = () => {
     <div>
 
         <div className=''>
-            <h1>Latest Offers</h1>
+            <h1>Dinner Classics</h1>
                 <div className=''>
                     
                 </div>
@@ -33,7 +36,12 @@ const ViewRestaurant = () => {
             <div key={"menu_" + index} className=''>
               <div className=''>
                 <label>Menu Items</label>
-                <p>{menu.menuItems}</p>
+                <p>{menu.menuItem}</p>
+              <div className=''>
+              <p>{menu.boxArt}</p>
+                <p>Meat Option: {menu.meat}</p>
+                <h5>Ingredients {menu.ingredients}</h5>
+                </div>
               </div>
             </div>
           )})}

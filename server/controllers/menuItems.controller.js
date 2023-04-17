@@ -13,7 +13,7 @@ Menu.create(req.body)
                 $push:{menuItems: newMenuItem._id}
             },
             {new:true, useFindAndModify:false})
-            .populate("menuItems", "menuItems")
+            .populate("menuItems", "menuItem ingredients meat boxArt")
             .then((updateRestaurant)=>{
                 console.log(updateRestaurant)
                 res.json(updateRestaurant)
@@ -30,9 +30,17 @@ Menu.create(req.body)
 
 }
 
+const createIngredient = (req,res) => {
+    console.log(req.body)
+    Menu.create(req.body)
+    req.body.restaurant_id = req.params.restaurant_id
+    Restaurant.findByIdAndUpdate(r)
+}
+
 
 module.exports = {
     createMenuItem,
+
 
 
 }
